@@ -1,0 +1,17 @@
+-var assets = ''
+
+doctype html
+html
+	head
+		link(href= assets + '/css/main.css' rel='stylesheet')
+	body
+		header.header
+			include header.jade
+
+		main.main
+			block main
+
+		footer.footer
+			include footer.jade
+
+		script(href= assets + '/js/app.js')
