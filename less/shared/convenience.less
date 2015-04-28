@@ -1,0 +1,24 @@
+@import (reference) '../core/mixins';
+@import (reference) '../core/vars';
+
+.float-right { float: right; }
+.float-left { float: left; }
+
+.text-align-right { text-align: right; }
+.text-align-left { text-align: left; }
+.text-align-center { text-align: center; }
+
+.clearfix { .clearfix(); }
+.inner { .inner(); }
+.inner-30 { .inner(30px); @media @mobile { .inner(); } }
+.inner-05 { .inner(0.5em); }
+.inner-10 { .inner(10px); }
+.sr-only { .sr-only(); }
+
+.bold { font-family: @bold; }
+.lead { font-family: @semibold; }
+
+.line { height: 2px; }
+
+.overflow-hidden { overflow: hidden; }
+.hidden, .visible-lt-ie9 { display: none; }

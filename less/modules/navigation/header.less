@@ -1,0 +1,15 @@
+@import (reference) '../../core/colors';
+@import (reference) '../../core/mixins';
+
+.header {
+	background: @teal-500;
+
+	.container {
+		position: relative;
+		&:extend(.clearfix all);
+	}
+
+	h1 {
+		margin-top: 3em;
+	}
+}

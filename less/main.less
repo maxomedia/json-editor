@@ -1,16 +1,11 @@
+@import (inline) '../bower_components/normalize.css/normalize.css';
+
 @import 'core/fonticons';
+@import 'shared/fonts';
 
-body {
-	margin: 0;
-	background: rgb(50,50,50);
-	color: rgb(215,215,215);
-	font-family: Arial;
-}
+@import 'shared/general';
+@import 'shared/grid';
+@import 'shared/convenience';
 
-h1 {
-	margin: 4em 0 0;
-	font-size: 100px;
-	text-align: center;
-
-	.gfx(gulp, after);
-}
+@import 'modules/navigation/header';
+@import 'modules/navigation/menu';

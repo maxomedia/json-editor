@@ -1,0 +1,21 @@
+@import '../core/vars';
+
+@fontpath: '@{assets}/fonts';
+
+.font(Roboto-Bold-webfont);
+.font(Roboto-Light-webfont);
+.font(Roboto-Regular-webfont);
+.font(Roboto-Medium-webfont);
+
+.font(@family, @weight: normal, @style: normal){
+	@font-face {
+	  font-family: @family;
+	  src: url('@{fontpath}/@{family}.eot');
+	  src: url('@{fontpath}/@{family}.eot#iefix') format('embedded-opentype'),
+	       url('@{fontpath}/@{family}.woff') format('woff'),
+	       url('@{fontpath}/@{family}.ttf') format('truetype'),
+	       url('@{fontpath}/@{family}.svg') format('svg');
+	  font-weight: @weight;
+	  font-style: @style;
+	}
+}

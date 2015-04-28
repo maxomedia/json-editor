@@ -50,11 +50,14 @@
   .glyphmap(){
     .font-styling();
     & when (@class = gulp){ content: "\E001" }
+    & when (@class = menu){ content: "\E002" }
     
   }
 }
 
 .gfx-gulp:before { content: "\E001" }
+.gfx-menu:before { content: "\E002" }
 
 
-.after.gfx-gulp:after { content: "\E001" }
+.after.gfx-gulp:after { content: "\E001" }
+.after.gfx-menu:after { content: "\E002" }
