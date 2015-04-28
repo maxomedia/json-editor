@@ -38,8 +38,7 @@ var options = {
 
 		// Define entry points for your scripts
 		entry: {
-			app: './js/app.js',
-			module: './js/module.js'
+			main: './js/main.js'
 		}
 	},
 
