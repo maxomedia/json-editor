@@ -5,6 +5,7 @@ var fastOptions = require('../options');
 // Define extended default options, they
 // can be overriden by the fast options
 var defaults = {
+	target: 'web',
 	output: {
 		path: fastOptions.dest + '/js/',
 		filename: '[name].js',
@@ -12,7 +13,7 @@ var defaults = {
 	},
 	devtool: '#source-map',
 	resolve: {
-		extensions: ['', '.js']
+		extensions: ['', '.js', '.jsx']
 	},
 	debug: true
 }

@@ -20,7 +20,7 @@ var dest = './dest';
 var webroot = '';
 
 var options = {
-	name: 'mxm-gulp',
+	name: 'json-editor',
 
 	less: {
 
@@ -38,7 +38,16 @@ var options = {
 
 		// Define entry points for your scripts
 		entry: {
-			main: './js/main.js'
+			main: './js/main.jsx'
+		},
+		module: {
+			loaders: [
+				{
+					test: /\.jsx$/,
+					//exclude: /node_modules/,
+					loader: 'jsx-loader'
+				}
+			]
 		}
 	},
 

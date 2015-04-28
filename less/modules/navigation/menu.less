@@ -4,7 +4,7 @@
 .menu--toggler {
 	display: block;
 	position: absolute;
-	right: 0;
+	right: 2em;
 	bottom: -30px;
 	width: 60px;
 	height: 60px;
@@ -18,7 +18,7 @@
 
 	border-radius: 50%;
 	box-shadow: inset 1px 1px 2px rgba(255, 255, 255, 0.2), 0 4px 10px rgba(0, 0, 0, 0.5);
-	transition: transform 200ms;
+	transition: transform 300ms cubic-bezier(.62,.01,.26,1.68);
 
 	&:hover {
 		transform: scale(1.2);
