@@ -1,0 +1,45 @@
+// Paths
+@assets   : '';
+
+// Fonts
+@font-size: 15px;
+@line-height: 1.4em;
+@standard : 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
+@regular  : 'roboto-Regular-webfont', @standard;
+@bold     : 'roboto-Bold-webfont', @standard;
+@light    : 'roboto-Light-webfont', @standard;
+@semibold : 'roboto-Medium-webfont', @standard;
+
+
+// Min breakpoints
+@xlarge               : 1920px;
+@large                : 1200px;
+@medium               : 992px;
+@small                : 768px;
+@xsmall               : 480px;
+
+// Max breakpoints
+@large-max            : (@xlarge - 1);
+@medium-max           : (@large - 1);
+@small-max            : (@medium - 1);
+@xsmall-max           : (@small - 1);
+@xxsmall-max          : (@xsmall - 1);
+
+// Min media queries
+@min-full-hd          : ~'(min-width:@{xlarge})'; // min 1920px
+@min-desktop          : ~'(min-width:@{large})';  // min 1200px
+@min-laptop           : ~'(min-width:@{medium})'; // min 992px
+@min-tablet           : ~'(min-width:@{small})';  // min 768px
+@min-mobile           : ~'(min-width:@{xsmall})'; // min 480px
+
+// Max media queries
+@max-desktop          : ~'(max-width:@{large-max})';   // max 1919px
+@max-laptop           : ~'(max-width:@{medium-max})';  // max 1199px
+@max-tablet           : ~'(max-width:@{small-max})';   // max 991px
+@max-mobile           : ~'(max-width:@{xsmall-max})';  // max 767px
+@max-mini-mobile      : ~'(max-width:@{xxsmall-max})'; // max 479px
+
+// Alias
+@mobile               : @max-mobile;				   // max 767px
+@desktop              : @min-tablet;				   // min 768px
+@mini-mobile          : @max-mini-mobile;              // max 479px

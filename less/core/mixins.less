@@ -1,0 +1,129 @@
+/**
+ * Clear floated containers
+ * @return {undefined}
+ */
+.clearfix(){
+	&:before, &:after{ content: " "; display: table; }
+	&:after{ clear: both; }
+}
+
+/**
+ * Handle margin between content elements
+ * @param  {em/px} @top How much top margin
+ * @param  {em/px} @bottom How much bottom margin
+ * @return {undefined}
+ */
+.inner(@top: 1em){
+	> * {
+		margin-top: @top;
+		&:first-child { margin-top: 0; }
+	}
+}
+
+/**
+ * Visually hide an element and make it accessible only to screenreaders
+ * @return {undefined}
+ */
+.sr-only () {
+	position: absolute !important;
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+	padding:0 !important;
+	border:0 !important;
+	height: 1px !important;
+	width: 1px !important;
+	overflow: hidden;
+}
+
+/**
+ * For staggered/delayed transitions
+ * @param  {number} @delay The delay between each step
+ * @param  {number} @max Maximum elements that get delayed. Any elements beyond limit get the delay of the last element
+ * @param  {string} @selector Optional child selector
+ * @param  {number} @index Starting point of the loop, do not pass this parameter.
+ * @return {css}
+ */
+.stagger(@delay: 50, @max: 5, @selector: ~'', @index: 0) when (@index < @max) {
+
+	// Set transition delay
+	&:nth-child(@{index})@{selector}{
+		transition-delay: @delay * @index + 0ms;
+	}
+
+	// Trigger loop
+	.stagger(@delay, @max, @selector, (@index + 1));
+}
+.stagger(@delay: 50, @max: 5, @selector: ~'', @index: 0) when (@index >= @max){
+
+	// Delay elements beyond max
+	&:nth-child(n+@{index})@{selector}{
+		transition-delay: @index * @delay  + 0ms;
+	}
+}
+
+/**
+ * Style for ul's used in a navigation or else
+ * @return {undefined}
+ */
+.nav-ul (@horizontal: false) {
+	padding-left: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+	list-style: none;
+	
+	& when (@horizontal = true) {
+		.clearfix();
+
+		> li {
+			float: left;
+		}
+	}
+}
+
+/**
+ * Make an element bounce right, as if it was
+ * held by a rubber band and slowly towed upwards
+ * until it is released and bounces back
+ * in place.
+ * @return {undefined}
+ */
+.bounce-up() {
+	animation: bounceup 1.5s infinite;
+	@keyframes bounceup {
+	  0%, 10%, 50%, 70%, 100% { transform: translateY(0); }
+	  45% { transform: translateY(-6px); }
+	  60% { transform: translateY(-2px); }
+	}
+}
+
+/**
+ * Make an element bounce right, as if it was
+ * held by a rubber band and slowly towed towards
+ * the right until it is released and bounces back
+ * in place.
+ * @return {undefined}
+ */
+.bounce-right() {
+	animation: bounceright 1.5s infinite;
+	@keyframes bounceright {
+	  0%, 10%, 50%, 70%, 100% { transform: translateX(0); }
+	  45% { transform: translateX(6px); }
+	  60% { transform: translateX(2px); }
+	}
+}
+
+/**
+ * Make an element bounce left, as if it was
+ * held by a rubber band and slowly towed towards
+ * the left until it is released and bounces back
+ * in place.
+ * @return {undefined}
+ */
+.bounce-left() {
+	animation: bounceleft 1.5s infinite;
+	@keyframes bounceleft {
+	  0%, 10%, 50%, 70%, 100% { transform: translateX(0); }
+	  45% { transform: translateX(-6px); }
+	  60% { transform: translateX(-2px); }
+	}
+}
